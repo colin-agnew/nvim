@@ -1,4 +1,3 @@
-require("custom")
 require("core.keymaps")
 require("core.plugins")
 require("core.plugin_config")
@@ -85,7 +84,6 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
 
- 
 -- Decrease update time
 vim.o.updatetime = 250
 vim.o.timeout = true
