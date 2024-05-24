@@ -20,18 +20,18 @@ return {
                         position = "bottom", -- | top | left | right
                         ratio = 0.4,
                     },
-                },
+                },-- 
                 suggestion = {
                     enabled = true,
                     auto_trigger = true,
                     debounce = 75,
                     keymap = {
-                        accept = "<c-a>",
+                        accept = "<c-l>",
                         accept_word = false,
                         accept_line = false,
                         next = "<c-j>",
                         prev = "<c-k>",
-                        dismiss = "<C-e>",
+                        dismiss = "C-e>",
                     },
                 },
             })

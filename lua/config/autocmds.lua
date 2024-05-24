@@ -95,6 +95,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
     -- vim.cmd("highlight Comment guifg=#475558")
     -- vim.cmd("highlight Comment guifg=green")
+
+    -- vim.cmd("highlight cursorline guifg=#404040")
+    vim.cmd("highlight cursorcolumn guifg=#404040")
+
   end,
 })
 

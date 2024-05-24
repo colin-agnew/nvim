@@ -30,7 +30,7 @@ return {
         },
       },
       sections = {
-        lualine_a = {},
+        lualine_a = {"mode"},
         lualine_b = {
           "fancy_branch",
         },
@@ -48,6 +48,11 @@ return {
           { "fancy_searchcount" },
         },
         lualine_x = {
+        {
+          require("noice").api.statusline.mode.get,
+          cond = require("noice").api.statusline.mode.has,
+          color = { fg = "#ff9e64" },
+        },
           "fancy_lsp_servers",
           "fancy_diff",
           "progress",
@@ -59,7 +64,7 @@ return {
         lualine_a = {},
         lualine_b = {},
         lualine_c = { "filename" },
-        -- lualine_x = { "location" },
+        -- lualine_x = { "location" } ,
         lualine_y = {},
         lualine_z = {},
       },

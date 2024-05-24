@@ -1,0 +1,7 @@
+require("core.plugin_config.autoclose")
+require("core.plugin_config.gruvbox")
+require("core.plugin_config.nvim-tree")
+require("core.plugin_config.lualine")
+--require("core.plugin_config.harpoon")
+require("core.plugin_config.fugitive")
+--require("core.plugin_config.barbar")

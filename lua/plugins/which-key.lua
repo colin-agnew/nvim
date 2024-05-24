@@ -9,7 +9,7 @@ return {
   opts = {
     plugins = {
       marks = false,     -- shows a list of your marks on ' and `
-      registers = false, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+      registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
       spelling = {
         enabled = true,
         suggestions = 20,

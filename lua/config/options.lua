@@ -1,5 +1,5 @@
 vim.g.mapleader = " "                           -- change leader to a space
-vim.g.maplocalleader = " "                      -- change localleader to a space
+vim.g.maplocalleader = ","                      -- change localleader to a comma
 
 vim.g.loaded_netrw = 1                          -- disable netrw
 vim.g.loaded_netrwPlugin = 1                    --  disable netrw
@@ -27,9 +27,8 @@ vim.opt.timeoutlen = 1000                       -- time to wait for a mapped seq
 vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.updatetime = 100                        -- faster completion (4000ms default)
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-vim.opt.expandtab = true                        -- convert tabs to spaces
-vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
-vim.opt.cursorline = false                      -- highlight the current line
+vim.opt.cursorline = false                       -- highlight the current line
+vim.opt.cursorcolumn= true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.breakindent = true                      -- wrap lines with indent
 vim.opt.relativenumber = true                   -- set relative numbered lines
@@ -47,6 +46,9 @@ vim.opt.fillchars = { eob = " " }               -- change the character at the e
 -- vim.opt.guicursor = ""                          -- set the cursor to be a vertical bar
 
 -- vim.opt.cursorlineopt = "number"              -- set the cursorline
--- vim.opt.tabstop = 2                           -- insert 2 spaces for a tab
+vim.opt.tabstop = 4                           -- insert 4 spaces for a tab
+vim.opt.expandtab = true                        -- convert tabs to spaces
+vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
+vim.opt.softtabstop = 4                         -- insert 4 spaces for a tab
 -- vim.opt.laststatus = 0                          -- Always display the status line
 

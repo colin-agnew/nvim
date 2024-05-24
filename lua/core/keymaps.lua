@@ -1,0 +1,20 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+local options = { noremap = true }
+vim.keymap.set("i", "jj", "<Esc>", options)
+vim.keymap.set("i", "jk", "<Esc>", options)
+vim.keymap.set("n", "<leader>pv", ':NvimTreeFindFileToggle<CR>')
+vim.keymap.set("n", "<leader>n", ':NvimTreeFindFileToggle<CR>')
+vim.keymap.set("n", "<leader>po", "gewi%<Esc> ea%<Esc> bviwU")
+vim.keymap.set("n", "d", '"_d')
+vim.keymap.set("v", "d", '"_d')
+vim.keymap.set("n", "dw", 'wb"_dw')
+vim.keymap.set("n", "dd", '"_dd')
+vim.keymap.set('v', 'p', '"_dP')
+vim.keymap.set("n", "yw", "viwy")
+vim.keymap.set("n", '<leader>py', ":w !python3<Enter>")
+vim.keymap.set("n", '<C-c>', '<C-a>')
+vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
+vim.keymap.set('n', '<leader>.', ':bn<CR>')
+vim.keymap.set('n', '<leader>,', ':bp<CR>')
+vim.keymap.set('n', '<leader>x', ' :bd<CR> :bd<CR>')

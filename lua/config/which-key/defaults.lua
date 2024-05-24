@@ -135,10 +135,9 @@ return {
     x = { require("dap").terminate, "Exit" },
   },
   n = {
-    name = "+Neogen",
-    g = { "<cmd>lua require('neogen').generate()<cr>", "Generate Annotatin" },
-    f = { "<cmd>lua require('neogen').generate({ type = 'func' })<cr>", "Generate Function Annotation" },
-    t = { "<cmd>lua require('neogen').generate({ type = 'type' })<cr>", "Generate Type Annotation" },
+    name = "+Neorg",
+    i = { "<cmd>Neorg index<cr>", "Go to Neorg Index" },
+    j = { "<cmd>Neorg journal<cr>", "Go to Neorg Journal" },
   },
   t = {
     name = "+Tests",
