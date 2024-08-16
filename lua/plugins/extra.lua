@@ -4,7 +4,7 @@ return {
         "windwp/nvim-ts-autotag",
         opts = {},
     },
-
+{ 'echasnovski/mini.icons', version = false },
     {
         "vhyrro/luarocks.nvim",
         priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.

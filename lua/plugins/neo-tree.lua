@@ -35,6 +35,7 @@ return {
                     reveal_force_cwd = true, -- change cwd without asking if needed
                 })
             end,
+            desc = "Float File Explorer",
         },
         --{ "<leader>e", ":Neotree toggle float<CR>", silent = true, desc = "Float File Explorer" },
         { "<leader><tab>", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },

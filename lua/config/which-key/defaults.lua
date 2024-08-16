@@ -10,27 +10,32 @@ return {
   v = "Go to definition in a split",
   a = "Swap next param",
   A = "Swap previous param",
-  o = { require("telescope.builtin").buffers, "Open Buffer" },
+  o = {
+      function ()
+        require("telescope.builtin").buffers({ sort_lastused = true, ignore_current_buffer = false })
+     end,
+      "Open Buffer",
+  },
   W = { "<cmd>noautocmd w<cr>", "Save without formatting (noautocmd)" },
   u = {
-    name = "UI",
+    desc = "UI",
     v = { require("config.utils").toggle_set_color_column, "Toggle Color Line" },
     c = { require("config.utils").toggle_cursor_line, "Toggle Cursor Line" },
   },
   i = {
-    name = "Sessions",
+    desc = "Sessions",
     s = { "<cmd>lua require('persistence').load()<cr>", "Load Session" },
     l = { "<cmd>lua require('persistence').load({ last = true })<cr>", "Load Last Session" },
     d = { "<cmd>lua require('persistence').stop()<cr>", "Stop Persistence" },
   },
   r = {
-    name = "Replace (Spectre)",
+    desc = "Replace (Spectre)",
     r = { "<cmd>lua require('spectre').open()<cr>", "Replace" },
     w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Replace Word" },
     f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Replace Buffer" },
   },
   G = {
-    name = "+Git",
+    desc = "+Git",
     k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
     p = { "<cmd>lua require 'gitsigns'.preview_hunk()<cr>", "Preview Hunk" },
@@ -56,7 +61,7 @@ return {
     U = { ":UndotreeToggle<CR>", "Toggle UndoTree" },
   },
   l = {
-    name = "+LSP",
+    desc = "+LSP",
     a = { vim.lsp.buf.code_action, "Code Action" },
     A = { vim.lsp.buf.range_code_action, "Range Code Actions" },
     s = { vim.lsp.buf.signature_help, "Display Signature Information" },
@@ -70,7 +75,7 @@ return {
     c = { require("config.utils").copyFilePathAndLineNumber, "Copy File Path and Line Number" },
 
     W = {
-      name = "+Workspace",
+      desc = "+Workspace",
       a = { vim.lsp.buf.add_workspace_folder, "Add Folder" },
       r = { vim.lsp.buf.remove_workspace_folder, "Remove Folder" },
       l = {
@@ -82,7 +87,7 @@ return {
     },
   },
   s = {
-    name = "+Search",
+    desc = "+Search",
     f = { "<cmd>Telescope find_files<cr>", "Find File (CWD)" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
     H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
@@ -101,7 +106,7 @@ return {
     e = { "<cmd>Telescope frecency<cr>", "Frecency" },
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     d = {
-      name = "+DAP",
+      desc = "+DAP",
       c = { "<cmd>Telescope dap commands<cr>", "Dap Commands" },
       b = { "<cmd>Telescope dap list_breakpoints<cr>", "Dap Breakpoints" },
       g = { "<cmd>Telescope dap configurations<cr>", "Dap Configurations" },
@@ -116,14 +121,14 @@ return {
     },
   },
   -- T = {
-  --   name = "+Todo",
+  --   desc = "+Todo",
   --   t = { "<cmd>TodoTelescope<cr>", "Todo" },
   --   T = { "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", "Todo/Fix/Fixme" },
   --   x = { "<cmd>TodoTrouble<cr>", "Todo (Trouble)" },
   --   X = { "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr><cr>", "Todo/Fix/Fixme (Trouble)" },
   -- },
   d = {
-    name = "Debug",
+    desc = "Debug",
     b = { require("dap").toggle_breakpoint, "Breakpoint" },
     c = { require("dap").continue, "Continue" },
     i = { require("dap").step_into, "Into" },
@@ -135,14 +140,14 @@ return {
     x = { require("dap").terminate, "Exit" },
   },
   n = {
-    name = "+Neorg",
+    desc = "+Neorg",
     i = { "<cmd>Neorg index<cr>", "Go to Neorg Index" },
     j = { "<cmd>Neorg journal<cr>", "Go to Neorg Journal" },
   },
   t = {
-    name = "+Tests",
+    desc = "+Tests",
   },
   x = {
-    name = "+Trouble",
+    desc = "+Trouble",
   }
 }

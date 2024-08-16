@@ -43,7 +43,12 @@ local map = vim.keymap.set
 
 
 -- Keep cursor centered when scrolling
+-- map("n", "<C-j>", "<C-d>zz", opts)
+map("n", "D", "<C-d>zz", opts)
 map("n", "<C-d>", "<C-d>zz", opts)
+map("n", "J", "<C-d>zz", opts)
+-- map("n", "<C-k>", "<C-u>zz", opts)
+map("n", "K", "<C-u>zz", opts)
 map("n", "<C-u>", "<C-u>zz", opts)
 
 -- Move selected line / block of text in visual mode
@@ -84,8 +89,8 @@ map({ "n", "x", "o" }, "H", "^", opts)
 map({ "n", "x", "o" }, "L", "g_", opts)
 
 -- Navigate buffers
-map("n", "<C-Right>", ":bnext<CR>", opts)
-map("n", "<C-Left>", ":bprevious<CR>", opts)
+map("n", "<A-l>",":bnext<CR>", opts)
+map("n", "<C-[>", ":bprevious<CR>", opts)
 
 -- Panes resizing:b
 map("n", "+", ":vertical resize +5<CR>")
@@ -121,7 +126,7 @@ map("n", "<C-a>", "ggVG")
 
 -- write file in current directory
 -- :w %:h/<new-file-name>
-map("n", "<C-n>", ":w %:h/")
+-- map("n", "<C-n>", ":w %:h/")
 
 -- delete forward
 -- w{number}dw
@@ -142,3 +147,18 @@ map("n", "dd", '"_dd')
 map("n", "o", 'o<Esc>')
 map("n", "O", 'O<Esc>')
 
+-- Allow clipboard copy paste in neovim
+vim.g.neovide_input_use_logo = 1
+vim.api.nvim_set_keymap('', '<D-v>', '+p<CR>', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('!', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('t', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<D-v>', '<C-R>+', { noremap = true, silent = true})
+
+
+
+vim.keymap.set("n", "<leader>sC", function()
+  require("telescope").extensions.diff.diff_files({ hidden = true })
+end, { desc = "Compare 2 files" })
+vim.keymap.set("n", "<leader>sc", function()
+  require("telescope").extensions.diff.diff_current({ hidden = true })
+end, { desc = "Compare file with current" })
