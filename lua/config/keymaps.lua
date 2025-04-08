@@ -122,7 +122,7 @@ map("n", "<Leader>m", ":Telescope git_status<CR>")
 map("n", "X", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { silent = true })
 
 -- Select all
-map("n", "<C-a>", "ggVG")
+map("n", "<C-S-a>", "ggVG")
 
 -- write file in current directory
 -- :w %:h/<new-file-name>

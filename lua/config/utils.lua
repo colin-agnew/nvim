@@ -10,11 +10,11 @@ M.telescope_git_or_file = function()
   end
 end
 
-M.toggle_set_color_column = function()
-  if vim.wo.colorcolumn == "" then
-    vim.wo.colorcolumn = "80"
+M.toggle_cursor_column = function()
+  if vim.wo.cursorcolumn then
+    vim.wo.cursorcolumn = false
   else
-    vim.wo.colorcolumn = ""
+    vim.wo.cursorcolumn = true
   end
 end
 
